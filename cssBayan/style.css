@@ -4,6 +4,11 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: #d6f38d;
+
 }
 .container{
     margin: 0 auto;
@@ -11,6 +16,7 @@
 }
 h1{
     font-weight: bold;
+    font-size: 42px;
     margin: 3% 0;
 }
 input[type="radio"]{
@@ -33,13 +39,15 @@ input[type="radio"]{
 
 .tab-content img {
     max-width: 50%;
+    max-height: 40vh;
 }
+
 label{
     font-size: 23px;
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
-    padding: 2%;
+    padding: 1%;
     font-weight: bold;
     color: #fff;
     background: rgb(18, 18, 59);
@@ -57,14 +65,12 @@ label{
     text-align: center;
     transition: all .35s;
 }
-.accordion-block  input:hover  ~ label {
+.accordion-block input:hover  ~ label {
     color: #9fbac5;
 }
 .accordion-wrap:hover label{
     color: #d6f38d;
 }
-
-
 input:checked ~ .tab-content {
     opacity: 1;
     padding: 1em;
@@ -77,13 +83,42 @@ input:checked ~ .tab-content {
 .accordion-block:hover .tab-content{
     opacity: 1;
     padding: 1em;
-    max-height: 100vh;
+    max-height: 50vh;
 }
 input:checked + label span::after {
     content: "✖";
 }
-@media screen and (max-width: 600px){
+
+@media screen and (max-width: 900px){
     .container {
-        max-width: 90%;
+        max-width: 80%;
+    }
+    label{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 500px){
+    h1{
+        font-size: 20px;
+        margin-top: 3%;
+    }
+    .container {
+        max-width: 95%;
+    }
+    label{
+        font-size: 15px;
+        padding: 3%;
+
+    }
+    input:checked ~ .tab-content {
+        padding: 0.5em;
+    }
+    .accordion-block:hover .tab-content{
+        opacity: 1;
+        padding: 1em;
+        max-height: 50vh;
+    }
+    .tab-content img {
+        max-height: 100vh;
     }
 }
