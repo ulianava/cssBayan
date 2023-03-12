@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.container{
+    margin: 0 auto;
+    max-width: 50%;
+}
+h1{
+    font-weight: bold;
+    margin: 3% 0;
+}
+input[type="radio"]{
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.tab-content{
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease-out;
+    max-height: 0;
+    width: auto;
+    text-align: center;
+    margin: auto;
+    background: rgba(243, 243, 243, 0.863);
+
+}
+
+.tab-content img {
+    max-width: 50%;
+}
+label{
+    font-size: 23px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    padding: 2%;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(18, 18, 59);
+    border-top: 1px solid rgb(0, 0, 0);
+    text-transform: capitalize;
+}
+.accordion-block{
+    width: 100%;
+}
+
+.accordion-wrap:hover label span::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transition: all .35s;
+}
+.accordion-block  input:hover  ~ label {
+    color: #9fbac5;
+}
+.accordion-wrap:hover label{
+    color: #d6f38d;
+}
+
+
+input:checked ~ .tab-content {
+    opacity: 1;
+    padding: 1em;
+    max-height: 100vh;
+}
+.tab-content:active img{
+    opacity: 0.7;
+    transition: all .35s;
+}
+.accordion-block:hover .tab-content{
+    opacity: 1;
+    padding: 1em;
+    max-height: 100vh;
+}
+input:checked + label span::after {
+    content: "✖";
+}
+@media screen and (max-width: 600px){
+    .container {
+        max-width: 90%;
+    }
+}
