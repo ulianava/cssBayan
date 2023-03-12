@@ -89,3 +89,36 @@ input:checked + label span::after {
     content: "✖";
 }
 
+@media screen and (max-width: 900px){
+    .container {
+        max-width: 80%;
+    }
+    label{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 500px){
+    h1{
+        font-size: 20px;
+        margin-top: 3%;
+    }
+    .container {
+        max-width: 95%;
+    }
+    label{
+        font-size: 15px;
+        padding: 3%;
+
+    }
+    input:checked ~ .tab-content {
+        padding: 0.5em;
+    }
+    .accordion-block:hover .tab-content{
+        opacity: 1;
+        padding: 1em;
+        max-height: 50vh;
+    }
+    .tab-content img {
+        max-height: 100vh;
+    }
+}
